@@ -6,36 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/firstButton"
+    <EditText
+        android:id="@+id/inputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Fragment 1"
+        android:ems="10"
+        android:hint="전달할 텍스트를 입력하세요"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/secondButton"
+        android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Fragment 2"
-        app:layout_constraintStart_toEndOf="@+id/firstButton"
+        android:text="전달"
+        app:layout_constraintStart_toEndOf="@+id/inputText"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="대기중"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
 
     <FrameLayout
         android:id="@+id/contentFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstButton">
+        app:layout_constraintTop_toBottomOf="@+id/fragmentText">
 
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
