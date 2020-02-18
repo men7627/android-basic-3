@@ -7,24 +7,35 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/webButton"
+        android:id="@+id/firstButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="구글로 이동"
+        android:text="Fragment 1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/secondButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="메시지 공유"
-        app:layout_constraintStart_toEndOf="@+id/webButton"
+        android:text="Fragment 2"
+        app:layout_constraintStart_toEndOf="@+id/firstButton"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/contentFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstButton">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
