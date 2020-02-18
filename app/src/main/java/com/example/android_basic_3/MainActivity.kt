@@ -1,9 +1,11 @@
 package com.example.android_basic_3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,16 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        userInputText.addTextChangedListener(object: TextWatcher{
-            override fun afterTextChanged(s: Editable?) {
-                previewText.text = s
+        moveButton.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?) {
+                val intent = Intent(applicationContext, SubActivity::class.java)
+                intent.putExtra("MESSAGE", "MainActivity에서 왔습니다. ")
+                startActivity(intent)
             }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
         })
     }
 }
