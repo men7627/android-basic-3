@@ -1,5 +1,7 @@
 package com.example.android_basic_3
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +17,13 @@ class SubActivity : AppCompatActivity() {
 
         extraText.text = intent.getStringExtra("MESSAGE")
 
-        okButton.setOnClickListener {  finish() }
+        okButton.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("MESSAGE", "다시 돌아왔습니다.")
+
+            setResult(Activity.RESULT_OK, intent)
+
+            finish( )
+        }
     }
 }
